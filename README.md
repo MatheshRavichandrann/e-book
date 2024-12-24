@@ -27,7 +27,7 @@ Ensure you have the following installed:
 1. **Java 17** or higher.
 2. **Maven** for dependency management.
 3. **Docker** for containerization and streamlined deployment.
-4. **Angular** for UI (if the `book-network-ui` is included).
+4. **Angular** for UI.
 
 ---
 
