@@ -1,5 +1,4 @@
 package com.mugiwara.book.file;
-import com.mugiwara.book.book.Book;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
