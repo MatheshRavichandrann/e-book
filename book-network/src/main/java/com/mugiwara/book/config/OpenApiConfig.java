@@ -8,7 +8,8 @@ import io.swagger.v3.oas.annotations.info.License;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import io.swagger.v3.oas.annotations.servers.Server;
-
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 @OpenAPIDefinition(
         info = @Info(
                 contact = @Contact(
@@ -21,7 +22,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 version = "1.0",
                 license = @License(
                         name = "Mugiwara",
-                        url = "https://madez-portfolio-main.vercel.app/" // todo
+                        url = "https://madez-portfolio-main.vercel.app/"
 
                 ),
                 termsOfService = "Terms of service"
@@ -33,7 +34,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 ),
                 @Server(
                         description = "PROD ENV",
-                        url = "https://madez-portfolio-main.vercel.app/" // todo
+                        url = "http://localhost:8088/api/v1"
                 )
         },
         security = {
@@ -51,7 +52,6 @@ import io.swagger.v3.oas.annotations.servers.Server;
         bearerFormat = "JWT",
         in = SecuritySchemeIn.HEADER
 )
-
 
 public class OpenApiConfig {
 
