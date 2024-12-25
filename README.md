@@ -1,6 +1,6 @@
-# E-book API
+# E-Book API
 
-The **Book Network API** is a Spring Boot-based backend service that facilitates the management of books and user interactions, such as sharing, retrieving, and maintaining book details. This API also handles user authentication and authorization.
+The **E-Book API** is a Spring Boot-based backend service that facilitates the management of books and user interactions, such as sharing, retrieving, and maintaining book details. This API also handles user authentication and authorization.
 
 ---
 
