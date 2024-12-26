@@ -1,6 +1,6 @@
-# Book Network API
+# E-Book API
 
-The **Book Network API** is a Spring Boot-based backend service that facilitates the management of books and user interactions, such as sharing, retrieving, and maintaining book details. This API also handles user authentication and authorization.
+The **E-Book API** is a Spring Boot-based backend service that facilitates the management of books and user interactions, such as sharing, retrieving, and maintaining book details. This API also handles user authentication and authorization.
 
 ---
 
@@ -36,7 +36,7 @@ Ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/book-network.git
+git clone https://github.com/MatheshRavichandrann/e-book.git
 cd book-network
 ```
 
