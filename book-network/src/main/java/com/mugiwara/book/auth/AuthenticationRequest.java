@@ -14,10 +14,10 @@ public class AuthenticationRequest {
 
     @Email(message = "Email is not well Formatted")
     @NotEmpty(message = "Email is mandatory")
-    @NotBlank(message = "Email is mandatory, no blanks")
+    @NotBlank(message = "Email is mandatory")
     private String email;
     @NotEmpty(message = "Password is mandatory")
-    @NotBlank(message = "Password is mandatory, no blanks")
+    @NotBlank(message = "Password is mandatory")
     @Size(min = 8, message = "Password should be in 8 characters long minimum")
     private String password;
 
