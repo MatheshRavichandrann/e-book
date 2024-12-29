@@ -1,4 +1,5 @@
 package com.mugiwara.book.auth;
+
 import com.mugiwara.book.email.EmailService;
 import com.mugiwara.book.email.EmailTemplateName;
 import com.mugiwara.book.role.RoleRepository;
@@ -8,7 +9,7 @@ import com.mugiwara.book.user.TokenRepository;
 import com.mugiwara.book.user.User;
 import com.mugiwara.book.user.UserRepository;
 import jakarta.mail.MessagingException;
-import lombok.*;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -75,7 +76,7 @@ public class AuthenticationService {
                 .user(user)
                 .build();
         tokenRepository.save(token);
-        return  generatedToken;
+        return generatedToken;
     }
 
     private String generateActivationCode(int length) {
@@ -98,7 +99,7 @@ public class AuthenticationService {
                 )
         );
         var claims = new HashMap<String, Object>();
-        var user = ((User)auth.getPrincipal());
+        var user = ((User) auth.getPrincipal());
         claims.put("fullName", user.getFullName());
         var jwtToken = jwtService.generateToken(claims, user);
         return AuthenticationResponse.builder()
@@ -107,7 +108,7 @@ public class AuthenticationService {
 
     }
 
-//    @Transactional
+    //    @Transactional
     public void activateAccount(String token) throws MessagingException {
 
         Token savedToken = tokenRepository.findByToken(token)

@@ -1,4 +1,5 @@
 package com.mugiwara.book.handler;
+
 import com.mugiwara.book.exception.OperationNotPermittedException;
 import jakarta.mail.MessagingException;
 import org.springframework.http.ResponseEntity;
@@ -8,8 +9,10 @@ import org.springframework.security.authentication.LockedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
 import java.util.HashSet;
 import java.util.Set;
+
 import static com.mugiwara.book.handler.BusinessErrorCodes.*;
 import static org.springframework.http.HttpStatus.*;
 
@@ -17,7 +20,7 @@ import static org.springframework.http.HttpStatus.*;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(LockedException.class)
-    public ResponseEntity<ExceptionResponse> handleException(LockedException exp){
+    public ResponseEntity<ExceptionResponse> handleException(LockedException exp) {
         return ResponseEntity
                 .status(UNAUTHORIZED)
                 .body(ExceptionResponse.builder()
@@ -29,7 +32,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(DisabledException.class)
-    public ResponseEntity<ExceptionResponse> handleException(DisabledException exp){
+    public ResponseEntity<ExceptionResponse> handleException(DisabledException exp) {
         return ResponseEntity
                 .status(UNAUTHORIZED)
                 .body(ExceptionResponse.builder()
@@ -41,7 +44,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(BadCredentialsException.class)
-    public ResponseEntity<ExceptionResponse> handleException(BadCredentialsException exp){
+    public ResponseEntity<ExceptionResponse> handleException(BadCredentialsException exp) {
         return ResponseEntity
                 .status(UNAUTHORIZED)
                 .body(ExceptionResponse.builder()
@@ -53,7 +56,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(MessagingException.class)
-    public ResponseEntity<ExceptionResponse> handleException(MessagingException exp){
+    public ResponseEntity<ExceptionResponse> handleException(MessagingException exp) {
         return ResponseEntity
                 .status(INTERNAL_SERVER_ERROR)
                 .body(ExceptionResponse.builder()
@@ -64,7 +67,7 @@ public class GlobalExceptionHandler {
 
 
     @ExceptionHandler(OperationNotPermittedException.class)
-    public ResponseEntity<ExceptionResponse> handleException(OperationNotPermittedException exp){
+    public ResponseEntity<ExceptionResponse> handleException(OperationNotPermittedException exp) {
         return ResponseEntity
                 .status(BAD_REQUEST)
                 .body(ExceptionResponse.builder()

@@ -1,4 +1,5 @@
 package com.mugiwara.book.book;
+
 import com.mugiwara.book.common.PageResponse;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -21,14 +22,14 @@ public class BookController {
     public ResponseEntity<Integer> saveBook(
             @Valid @RequestBody BookRequest request,
             Authentication connectUser
-    ){
+    ) {
         return ResponseEntity.ok(service.save(request, connectUser));
     }
 
     @GetMapping("{book-id}")
     public ResponseEntity<BookResponse> findBookById(
             @PathVariable("book-id") Integer bookId
-    ){
+    ) {
         return ResponseEntity.ok(service.findById(bookId));
     }
 
@@ -37,7 +38,7 @@ public class BookController {
             @RequestParam(name = "page", defaultValue = "0", required = false) int page,
             @RequestParam(name = "size", defaultValue = "10", required = false) int size,
             Authentication connectedUser
-    ){
+    ) {
         return ResponseEntity.ok(service.findAllBooks(page, size, connectedUser));
     }
 
@@ -46,7 +47,7 @@ public class BookController {
             @RequestParam(name = "page", defaultValue = "0", required = false) int page,
             @RequestParam(name = "size", defaultValue = "10", required = false) int size,
             Authentication connectedUser
-    ){
+    ) {
         return ResponseEntity.ok(service.findAllBooksByOwner(page, size, connectedUser));
     }
 
@@ -56,7 +57,7 @@ public class BookController {
             @RequestParam(name = "page", defaultValue = "0", required = false) int page,
             @RequestParam(name = "size", defaultValue = "10", required = false) int size,
             Authentication connectedUser
-    ){
+    ) {
         return ResponseEntity.ok(service.findAllBorrowedBooks(page, size, connectedUser));
     }
 
@@ -65,7 +66,7 @@ public class BookController {
             @RequestParam(name = "page", defaultValue = "0", required = false) int page,
             @RequestParam(name = "size", defaultValue = "10", required = false) int size,
             Authentication connectedUser
-    ){
+    ) {
         return ResponseEntity.ok(service.findAllReturnedBooks(page, size, connectedUser));
     }
 
@@ -74,7 +75,7 @@ public class BookController {
     public ResponseEntity<Integer> updateShareableStatus(
             @PathVariable("book-id") Integer bookId,
             Authentication connectedUser
-    ){
+    ) {
         return ResponseEntity.ok(service.updateShareableStatus(bookId, connectedUser));
     }
 
@@ -82,7 +83,7 @@ public class BookController {
     public ResponseEntity<Integer> updateArchivedStatus(
             @PathVariable("book-id") Integer bookId,
             Authentication connectedUser
-    ){
+    ) {
         return ResponseEntity.ok(service.updateArchivedStatus(bookId, connectedUser));
     }
 
@@ -91,7 +92,7 @@ public class BookController {
     public ResponseEntity<Integer> borrowBook(
             @PathVariable("book-id") Integer bookId,
             Authentication connectedUser
-    ){
+    ) {
         return ResponseEntity.ok(service.borrowBook(bookId, connectedUser));
     }
 
@@ -100,7 +101,7 @@ public class BookController {
     public ResponseEntity<Integer> returnBorrowBook(
             @PathVariable("book-id") Integer bookId,
             Authentication connectedUser
-    ){
+    ) {
         return ResponseEntity.ok(service.returnBorrowBook(bookId, connectedUser));
     }
 
@@ -109,7 +110,7 @@ public class BookController {
     public ResponseEntity<Integer> approveReturnBorrowBook(
             @PathVariable("book-id") Integer bookId,
             Authentication connectedUser
-    ){
+    ) {
         return ResponseEntity.ok(service.approveReturnBorrowBook(bookId, connectedUser));
     }
 
@@ -119,7 +120,7 @@ public class BookController {
             @Parameter()
             @RequestPart("file") MultipartFile file,
             Authentication connectedUser
-    ){
+    ) {
         service.uploadBookCoverPicture(file, connectedUser, bookId);
         return ResponseEntity.accepted().build();
     }

@@ -1,4 +1,5 @@
 package com.mugiwara.book.security;
+
 import com.mugiwara.book.user.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

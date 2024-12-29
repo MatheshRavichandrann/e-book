@@ -1,4 +1,5 @@
 package com.mugiwara.book.email;
+
 import lombok.Getter;
 
 @Getter

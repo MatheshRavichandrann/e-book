@@ -1,4 +1,5 @@
 package com.mugiwara.book;
+
 import com.mugiwara.book.role.Role;
 import com.mugiwara.book.role.RoleRepository;
 import lombok.RequiredArgsConstructor;
@@ -15,20 +16,20 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @RequiredArgsConstructor
 public class BookNetworkApiApplication {
 
-	private final RoleRepository roleRepository;
+    private final RoleRepository roleRepository;
 
-	public static void main(String[] args) {
-		SpringApplication.run(BookNetworkApiApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(BookNetworkApiApplication.class, args);
+    }
 
-	@Bean
-	public CommandLineRunner runner(RoleRepository roleRepository){
-		return args -> {
-			if (roleRepository.findByName("USER").isEmpty()) {
-				roleRepository.save(
-						Role.builder().name("USER").build()
-				);
-			}
-		};
-	}
+    @Bean
+    public CommandLineRunner runner(RoleRepository roleRepository) {
+        return args -> {
+            if (roleRepository.findByName("USER").isEmpty()) {
+                roleRepository.save(
+                        Role.builder().name("USER").build()
+                );
+            }
+        };
+    }
 }

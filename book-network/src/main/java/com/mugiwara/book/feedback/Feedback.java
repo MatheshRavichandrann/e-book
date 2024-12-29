@@ -1,7 +1,10 @@
 package com.mugiwara.book.feedback;
+
 import com.mugiwara.book.book.Book;
 import com.mugiwara.book.common.BaseEntity;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

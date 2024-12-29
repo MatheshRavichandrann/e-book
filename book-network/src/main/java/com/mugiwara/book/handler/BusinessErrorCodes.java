@@ -1,6 +1,8 @@
 package com.mugiwara.book.handler;
+
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
+
 import static org.springframework.http.HttpStatus.*;
 
 public enum BusinessErrorCodes {
@@ -21,7 +23,7 @@ public enum BusinessErrorCodes {
     @Getter
     private final HttpStatus httpStatus;
 
-    BusinessErrorCodes(int code,  HttpStatus httpStatus, String description) {
+    BusinessErrorCodes(int code, HttpStatus httpStatus, String description) {
         this.code = code;
         this.description = description;
         this.httpStatus = httpStatus;

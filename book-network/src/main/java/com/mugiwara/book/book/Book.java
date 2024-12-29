@@ -1,4 +1,5 @@
 package com.mugiwara.book.book;
+
 import com.mugiwara.book.common.BaseEntity;
 import com.mugiwara.book.feedback.Feedback;
 import com.mugiwara.book.history.BookTransactionHistory;
@@ -9,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+
 import java.util.List;
 
 @Getter
@@ -41,7 +43,7 @@ public class Book extends BaseEntity {
     private List<BookTransactionHistory> histories;
 
     @Transient
-    public double getRate(){
+    public double getRate() {
         if (feedbacks == null || feedbacks.isEmpty()) {
             return 0.0;
         }

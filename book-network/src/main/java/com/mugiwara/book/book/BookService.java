@@ -1,4 +1,5 @@
 package com.mugiwara.book.book;
+
 import com.mugiwara.book.common.PageResponse;
 import com.mugiwara.book.exception.OperationNotPermittedException;
 import com.mugiwara.book.file.FileStorageService;
@@ -14,9 +15,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
 import java.util.List;
 import java.util.Objects;
-import static com.mugiwara.book.book.BookSpecification.*;
+
+import static com.mugiwara.book.book.BookSpecification.withOwnerId;
 
 @Service
 @RequiredArgsConstructor

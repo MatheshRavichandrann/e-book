@@ -1,4 +1,5 @@
 package com.mugiwara.book.feedback;
+
 import com.mugiwara.book.common.PageResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -19,7 +20,7 @@ public class FeedbackController {
     public ResponseEntity<Integer> saveFeedback(
             @Valid @RequestBody FeedbackRequest request,
             Authentication connectedUser
-    ){
+    ) {
         return ResponseEntity.ok(service.save(request, connectedUser));
     }
 
@@ -29,7 +30,7 @@ public class FeedbackController {
             @RequestParam(name = "page", defaultValue = "0", required = false) int page,
             @RequestParam(name = "size", defaultValue = "10", required = false) int size,
             Authentication connectedUser
-    ){
+    ) {
         return ResponseEntity.ok(service.findAllFeedbacksByBook(bookId, page, size, connectedUser));
     }
 

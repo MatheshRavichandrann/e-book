@@ -1,4 +1,5 @@
 package com.mugiwara.book.book;
+
 import lombok.*;
 
 @Getter

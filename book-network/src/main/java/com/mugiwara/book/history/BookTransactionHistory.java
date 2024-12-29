@@ -1,4 +1,5 @@
 package com.mugiwara.book.history;
+
 import com.mugiwara.book.book.Book;
 import com.mugiwara.book.common.BaseEntity;
 import com.mugiwara.book.user.User;
