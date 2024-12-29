@@ -13,7 +13,7 @@ import { BookResponse, PageResponseBookResponse } from '../../../../services/mod
 export class BookListComponent implements OnInit{
   bookResponse: PageResponseBookResponse = {};
   page = 0;
-  size = 4;
+  size = 5;
   message = '';
   level = 'success';
   constructor(
@@ -89,8 +89,6 @@ export class BookListComponent implements OnInit{
         this.level = 'error';
         this.message = err.error.error;
       }
-    })
-
+    });
   }
-
 }
