@@ -33,7 +33,7 @@ public class FileStorageService {
             @NonNull String fileUploadSubPath) {
 
         final String finalUploadPath = fileUploadPath + separator + fileUploadSubPath;
-        File targetFolder = new File(fileUploadSubPath);
+        File targetFolder = new File(finalUploadPath); // Use finalUploadPath here
         if (!targetFolder.exists()) {
             boolean folderCreated = targetFolder.mkdirs();
             if (!folderCreated) {
@@ -53,6 +53,7 @@ public class FileStorageService {
         }
         return null;
     }
+
 
     private String getFileExtension(String fileName) {
 

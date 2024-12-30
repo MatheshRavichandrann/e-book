@@ -1,22 +1,15 @@
-<!-- 
-<div class="card" style="width: 20rem;">
-    <img height="200" [src]="bookCover" class="card-img-top" alt="cover pic">
-    <div class="card-body overflow">
-        <h5 class="card-title fs-6 text-nowrap fw-bold mb-1"><i class="fa-solid fa-book"></i>&nbsp;{{ book.title }}</h5>
-        <h5 class="card-title fs-6 text-secondary mb-1"><i class="fa-solid fa-user-check"></i>&nbsp;{{ book.authorName }}</h5>
-        <h6 class="card-title fs-6 text-nowrap fw-bold mb-1"><i class="fas fa-code"></i>&nbsp;{{ book.isbn }}</h6>
-        <h6 class="card-title fs-6 text-nowrap fw-bold mb-1"><i class="fa-solid fa-user"></i>&nbsp;{{ book.owner}}</h6>
-    </div>
-</div> -->
-
-
-
 <div class="card book-card">
     <img [src]="bookCover" class="card-img" alt="Book Cover">
     <div class="card-body">
-        <h5 class="card-title">
-            <i class="fas fa-book-open"></i> {{ book.title }}
-        </h5>
+        <h5 class="card-title d-flex justify-content-between align-items-center">
+            <span>
+              <i class="fas fa-book-open"></i> {{ book.title }}
+            </span>
+            <span>
+              <span *ngIf="book.sharable && !book.archived" class="badge bg-success text-white">Sharable</span>
+              <span *ngIf="book.archived" class="badge bg-danger text-white">Archived</span>
+            </span>
+          </h5>          
         <p>
             <i class="fas fa-user"></i> {{ book.authorName }}
         </p>
@@ -48,4 +41,3 @@
         </div>
     </div>
 </div>
-

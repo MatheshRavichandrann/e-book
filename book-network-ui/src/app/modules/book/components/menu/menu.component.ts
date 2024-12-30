@@ -9,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit{
 
-
   ngOnInit(): void {
     const linkColour = document.querySelectorAll('.nav-link');
     linkColour.forEach(link => {
@@ -23,9 +22,8 @@ export class MenuComponent implements OnInit{
     });
   }
 
-
   logout(){
-
+    localStorage.removeItem('token');
+    window.location.reload();
   }
-
 }

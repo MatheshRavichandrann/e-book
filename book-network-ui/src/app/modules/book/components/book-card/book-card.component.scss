@@ -1,9 +1,3 @@
-// .card-title {
-//     white-space: nowrap;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-// }
-
 .book-card {
     width: 20rem;
     border: 1px solid #ddd;
@@ -42,18 +36,13 @@
     color: #555;
 }
 
-.card-body i {
-    margin-right: 0.5rem;
-    color: #0275d8; /* Accent color */
+.badge {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
 }
 
-i{
-    cursor: pointer;
-}
-
-div{
-    &.card{
-        max-height: 500px;
-        min-height: 500px;
-    }
+.badge.bg-success {
+    background-color: #28a745;
+    color: white;
 }
