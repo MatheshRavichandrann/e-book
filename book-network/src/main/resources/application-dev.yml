@@ -11,25 +11,27 @@ spring:
     properties:
       hibernate:
         format_sql: true
-
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
   mail:
-    host: localhost
-    port: 1025
-    username: papps
-    password: papps
+    host: smtp.gmail.com
+    port: 465
+    username: adithya7887@gmail.com
+    password: pqmfwohnluglhysr
     properties:
       mail:
         smtp:
-          trust: "*"
-      auth: true
-      starttls:
-        enable: true
-      connectiontimeout: 5000
-      timeout: 3000
-      writetimeout: 5000
+          auth: true
+          ssl:
+            enable: true
+            trust: "*"
+        starttls:
+          enable: true
+    #      connectiontimeout: 5000
+    #      timeout: 3000
+    #      writetimeout: 5000
+    protocol: smtp
 
 application:
   security:
@@ -44,5 +46,6 @@ application:
   file:
     upload:
       photos-output-path: ./uploads
+
 server:
   port: 8088
